@@ -178,24 +178,4 @@ function App() {
   );
 }
 
-// Role-based redirect component
-function RoleBasedRedirect() {
-  const user = getCurrentUser();
-  
-  if (!user) {
-    return <Navigate to="/" replace />;
-  }
-  
-  switch (user.role) {
-    case 'trainee':
-      return <Navigate to="/trainee/dashboard" replace />;
-    case 'instructor':
-      return <Navigate to="/instructor/dashboard" replace />;
-    case 'admin':
-      return <Navigate to="/admin/dashboard" replace />;
-    default:
-      return <Navigate to="/trainee/dashboard" replace />;
-  }
-}
-
 export default App;
