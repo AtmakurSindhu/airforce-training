@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* IAF Dark Navy Theme */
+    --background: 230 35% 12%;
+    --foreground: 195 60% 85%;
+    --card: 230 30% 15%;
+    --card-foreground: 195 60% 85%;
+    --popover: 230 30% 15%;
+    --popover-foreground: 195 60% 85%;
+    --primary: 45 80% 52%;
+    --primary-foreground: 230 35% 12%;
+    --secondary: 230 25% 20%;
+    --secondary-foreground: 195 60% 85%;
+    --muted: 230 25% 20%;
+    --muted-foreground: 195 30% 60%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 230 35% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 25% 22%;
+    --input: 230 25% 20%;
+    --ring: 45 80% 52%;
+    --radius: 0.5rem;
+    --sidebar-background: 230 35% 10%;
+    --sidebar-foreground: 195 60% 85%;
+    --sidebar-primary: 45 80% 52%;
+    --sidebar-primary-foreground: 230 35% 12%;
+    --sidebar-accent: 230 25% 18%;
+    --sidebar-accent-foreground: 195 60% 85%;
+    --sidebar-border: 230 25% 20%;
+    --sidebar-ring: 45 80% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* IAF Tactical Dashboard Styles */
+  .iaf-panel {
+    @apply bg-iaf-navy/80 backdrop-blur-md border border-iaf-navy-light/50 rounded-lg;
+  }
+  
+  .iaf-panel-glow {
+    @apply bg-iaf-navy/90 backdrop-blur-md border border-iaf-gold/30 rounded-lg shadow-lg shadow-iaf-gold/5;
+  }
+  
+  .iaf-button-primary {
+    @apply bg-iaf-gold hover:bg-iaf-gold-light text-iaf-navy-dark font-semibold px-4 py-2 rounded-md transition-all duration-200;
+  }
+  
+  .iaf-button-secondary {
+    @apply bg-iaf-navy-light hover:bg-iaf-navy text-iaf-sky border border-iaf-navy-light/50 px-4 py-2 rounded-md transition-all duration-200;
+  }
+  
+  .iaf-text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  
+  .iaf-cyan-glow {
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  }
+  
+  .iaf-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(186, 226, 238, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(186, 226, 238, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .iaf-radar-pulse {
+    animation: radar-pulse 2s ease-out infinite;
+  }
+  
+  @keyframes radar-pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .iaf-scan-line {
+    animation: scan-line 3s linear infinite;
+  }
+  
+  @keyframes scan-line {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1D213C;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #2A3050;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
